@@ -1,0 +1,14 @@
+1. 优化码率控制。提供三种推流模式供开发者选择。
+	-- AlivcLivePushConfig中增加qualityMode属性。可选择清晰度优先、流畅度优先和自定义模式。在清晰度优先或者流畅度优先模式下，目标码率、最小码率、初始码率设置失效。由SDK内部进行最优参数设置。自定义模式下，使用开发者设置的码率与帧率进行推流。
+2. 优化美颜。增加美颜专业版功能
+	-- AlivcLivePushConfig中增加beautyLevel属性。可选择普通版和专业版。专业版可设置大眼beautyBigEye、瘦脸beautyThinFace、收下巴beautyShortenFace、腮红beautyCheekPink 等人脸识别相关参数。
+
+3. 剥离与播放器SDK的强依赖。SDK分离为依赖播放器与不依赖播放器的版本。其中不依赖播放器SDK的版本不可使用背景音乐相关的功能。
+4. DebeugView 辅助调试工具
+    -- 开发阶段可以在AlivcLivePusher对象中调用showDebugView接口 添加DebugView到UI界面。
+    -- release发版阶段禁止添加DebugView。
+5. 修复线上版本已知bug。
+6. 半透明水印支持
+7. android兼容视频硬编码profile
+8. 修改美颜资源文件的位置
+9. 解决埋点组件与播放器引入的埋点组件冲突
